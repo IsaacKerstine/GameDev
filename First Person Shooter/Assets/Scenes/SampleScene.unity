@@ -612,6 +612,7 @@ GameObject:
   - component: {fileID: 745816018}
   - component: {fileID: 745816021}
   - component: {fileID: 745816020}
+  - component: {fileID: 745816022}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -673,19 +674,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2a1d04e318b9f44beddf84ca24cf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug_text: {fileID: 868414760}
   cam: {fileID: 1113820478}
   invert_x: 0
   invert_y: 0
   invert_facter_x: 1
   invert_facter_y: 1
   sensitivity: 0.5
-  max_speed: 6
-  acceleration: 60
-  gravity: 15
-  stop_speed: 0.5
-  jump_impulse: 10
-  friction: 4
 --- !u!114 &745816021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +758,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &745816022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745816017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325400f43a166b7409a3e07fdd46c518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &837376949
 GameObject:
   m_ObjectHideFlags: 0

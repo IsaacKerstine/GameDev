@@ -7,7 +7,7 @@ using TMPro;
 public class PlayerControler : MonoBehaviour
 {
     //Debug
-    public TMP_Text debug_text;
+    //public TMP_Text debug_text;
     
     //Camera Variables
     public Camera cam;
@@ -21,7 +21,7 @@ public class PlayerControler : MonoBehaviour
     [Range(0.01f, 1f)] public float sensitivity;
 
     //Player Inputs
-    private Vector2 move_input;
+    /*private Vector2 move_input;
     private bool grounded;
 
     //Movment Variables
@@ -33,7 +33,7 @@ public class PlayerControler : MonoBehaviour
     public float gravity = 15f;
     public float stop_speed = 0.5f;
     public float jump_impulse = 10f;
-    public float friction = 4f;
+    public float friction = 4f;*/
 
     // Start is called before the first frame update
     void Start()
@@ -45,22 +45,22 @@ public class PlayerControler : MonoBehaviour
         //Invert Camera
         if (invert_x) invert_facter_x = -1;
         if (invert_y) invert_facter_y = -1;
-        character_controller = GetComponent<CharacterController>();
+        //character_controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Degug
-        debug_text.text = "Wish Dir: " + wish_dir.ToString();
+        /*debug_text.text = "Wish Dir: " + wish_dir.ToString();
         debug_text.text += "\nVelocity: " + player_velocity.ToString();
         debug_text.text += "\nSpeed: " + new Vector3(player_velocity.x, 0, player_velocity.z).magnitude.ToString();
-        debug_text.text += "\nGround: " + grounded.ToString();
+        debug_text.text += "\nGround: " + grounded.ToString();*/
 
         Look();
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         wish_dir = transform.right * move_input.x + transform.forward * move_input.y;
         wish_dir = wish_dir.normalized;
@@ -81,14 +81,14 @@ public class PlayerControler : MonoBehaviour
             player_velocity.y = -2;
         }
         character_controller. Move(player_velocity * Time.deltaTime);
-    }
+    }*/
 
     public void GetLookInput(InputAction.CallbackContext context)
     {
         look_input = context.ReadValue<Vector2>();
     }
 
-    public void GetMoveInput(InputAction.CallbackContext context)
+    /*public void GetMoveInput(InputAction.CallbackContext context)
     {
         move_input = context.ReadValue<Vector2>();
     }
@@ -96,7 +96,7 @@ public class PlayerControler : MonoBehaviour
     public void GetJumpInput(InputAction.CallbackContext context)
     {
         Jump();
-    }
+    }*/
 
     private void Look()
     {
@@ -110,15 +110,15 @@ public class PlayerControler : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(horizontal_look_angle, 0, 0);
     }
 
-    public void Jump()
+    /*public void Jump()
     {
         if (grounded)
         {
             player_velocity.y = jump_impulse;
         }
-    }
+    }*/
 
-    private Vector3 Accelerate(Vector3 wish_dir, Vector3 current_velocity, float accel, float max_speed)
+    /*private Vector3 Accelerate(Vector3 wish_dir, Vector3 current_velocity, float accel, float max_speed)
     {
         float proj_speed = Vector3.Dot(current_velocity, wish_dir);
         float accel_speed = accel * Time.deltaTime;
@@ -155,5 +155,5 @@ public class PlayerControler : MonoBehaviour
         new_velocity = new Vector3(new_velocity.x, current_velocity.y, new_velocity.z);
 
         return Accelerate(wish_dir, new_velocity, acceleration, max_speed);
-    }
+    }*/
 }
