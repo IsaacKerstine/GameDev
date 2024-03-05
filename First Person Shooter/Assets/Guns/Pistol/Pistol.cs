@@ -7,12 +7,6 @@ using UnityEngine.InputSystem.Interactions;
 
 public class Pistol : Gun
 {
-    
-    
-    
-
-    
-
     protected override void PrimaryFire()
     {
         if (shoot_delay_timer <= 0)
